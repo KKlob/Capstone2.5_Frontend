@@ -1,7 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 function App() {
+
+  function getData() {
+    const url = process.env.REACT_APP_API_URL || "http://localhost:3000";
+    axios.get(url)
+      .then((res) => {
+        console.log(res.data);
+      }).catch(err => {
+        console.log(err);
+      })
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
