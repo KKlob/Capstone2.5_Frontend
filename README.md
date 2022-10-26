@@ -5,12 +5,12 @@ Political Informant Application - React Front-End - Mobile-First UI Structure
 Responsive, intuitive web app built primarily for use on a smartphone or other hand-held device. Single-Page-Application allowing easy access to relevent Congressional Member information. Simplifying the way we understand how our Politians represent us. Capstone includes congressional member lookup for most recent congress + user login to store subscribed members for quick lookup. Anyone wanting to have a quick informational lookup of US Congress Members would enjoy using this app.
 
 ## ToDo:
+- Write out Routes for app
 - Setup ENV + API requests
-- Restructure files
+  - API Routes created
+  - ENV variable for baseURL needed on Netlify
 - Design base app container
-- Write base tests
 - Flesh out components
-  - Write tests for components
 
 ## Technical Overview
 Front-end of Full-Stack Application using React to create a 
@@ -26,11 +26,14 @@ Deployed via Netlify: [Political Informant App](https://tranquil-quokka-0aa89d.n
 Front-End will have a nav bar at top + 2(3) distinct windows
 ### Nav bar
   - Home link: returns to main state display
-  - User link: shows a user page if logged in user
-    - User page shows list of all congressional members user is subed to as well as relevant data for each
+  - Subs link: Only displays if user logged in - redirects to subs page
+    - Subs page shows list of all congressional members user is subed to as well as relevant data for each
   - Signup link: if no user logged in, show signup link - shows form to create username + password for app
-  - Login/Loggout link: handles user login - shows page to input username/password / handles user loggout - returns to homepage
+  - Login/Logout link: 
+    - Login: shows page to input username/password - Returns to homepage
+    - Logout: only shows if user logged in - redirects to Homepage + discards user data + jwt token
   - Light / Dark mode toggle
+    - toggles between two main styles for app
 ------
 ### Window 1: Member Display
   - Initially not displayed on app load. Gradual fade transition with Congress Display slide transition.
@@ -48,9 +51,29 @@ Front-End will have a nav bar at top + 2(3) distinct windows
   - Once a member is selected, it will trigger the Member Display Window to show/update
     - Slide transition down to make room for Member Display.
     - Will have option for user to subscribe to member if logged in
+------
+
+clicking on the Subs Link will route to the "/subs" route and will display a different Window
+### Subbed Member Display
+  - Renders a Member Display for each subbed member of user
+  - Only available if user is loged in, otherwise it is disabled and an alert will be shown to the user
+-----
+
+clicking on the Signup Link / Login Link will route to the /signup or /login route. Both will display the a form
+  - /signup will ask for username and password twice to ensure accuracy
+  - /login will ask for username and password
     
 ## React Router Schema
-T B D
+- "/"
+  - NavBar
+  - CongressDisplay
+- "/:memberID"
+  - NavBar
+  - MemberDisplay - Rendered via Outlet
+  - CongressDisplay
+- "/subs"
+  - NavBar
+  - SubbedMemberDisplay
 
 ## Stretch Goals
 ### Search Bar
