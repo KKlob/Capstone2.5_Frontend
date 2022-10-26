@@ -8,7 +8,6 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
 - Write out Routes for app
 - Setup ENV + API requests
   - API Routes created
-  - ENV variable for baseURL needed on Netlify
 - Design base app container
 - Flesh out components
 
