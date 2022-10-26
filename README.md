@@ -5,6 +5,7 @@ Political Informant Application - React Front-End - Mobile-First UI Structure
 Responsive, intuitive web app built primarily for use on a smartphone or other hand-held device. Single-Page-Application allowing easy access to relevent Congressional Member information. Simplifying the way we understand how our Politians represent us. Capstone includes congressional member lookup for most recent congress + user login to store subscribed members for quick lookup. Anyone wanting to have a quick informational lookup of US Congress Members would enjoy using this app.
 
 ## ToDo:
+- Setup Production branch -> Netlify auto-deploy
 - Write out Routes for app
 - Setup ENV + API requests
   - API Routes created
