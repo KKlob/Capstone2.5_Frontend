@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import Test1 from './Routes/test1';
-import Test2 from './Routes/test2';
+import App from './Routes/App';
+import MemberDisplay from './Routes/MemberDisplay';
 import NotFound from './Routes/notFound';
+import SubsPage from './Routes/SubsPage';
+import LoginForm from './Routes/LoginForm';
+import SignUpForm from './Routes/SignUpForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,8 +17,10 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="test1" element={<Test1 />} />
-          <Route path='test2' element={<Test2 />} />
+          <Route path="subs" element={<SubsPage />} />
+          <Route path="login" element={<LoginForm />} />
+          <Route path="signup" element={<SignUpForm />} />
+          <Route path="/member/:id" element={<MemberDisplay />} />
         </Route>
         {/* Add Catch-All Route */}
         <Route path="*" element={<NotFound />} />
