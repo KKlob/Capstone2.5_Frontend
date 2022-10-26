@@ -17,7 +17,6 @@ Front-end of Full-Stack Application using React to create a
 
 ### Tech Stack
 - React
-- Redux - store user info if logged in
 - React-Bootstrap
 
 Deployed via Netlify: [Political Informant App](https://tranquil-quokka-0aa89d.netlify.app/)
