@@ -3,13 +3,15 @@ import React, { useEffect, useState } from 'react';
 import API_Routes from '../../Utilities/apiRoutes';
 import Button from 'react-bootstrap/Button';
 import { v4 as uuid } from 'uuid';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function StateMembers({ state, setState }) {
 
     const navigate = useNavigate();
 
     const [members, setMembers] = useState(null);
+
+    const path = useLocation().pathname;
 
     useEffect(() => {
         const fetchStateMembers = async () => {
@@ -27,7 +29,9 @@ function StateMembers({ state, setState }) {
 
     function handleSelectMember(evt) {
         const memberId = evt.target.dataset.id;
-        navigate(`/member/${memberId}`);
+        if (!path.includes(memberId)) {
+            navigate(`/member/${memberId}`);
+        }
     }
 
     return (
