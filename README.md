@@ -9,8 +9,19 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
 - Setup ENV + API requests
   - API Routes created
   - ENV variable for baseURL needed on Netlify
-- Design base app container
 - Flesh out components
+- Remove "Home" Button from NavBar while on homepage.
+  - On SubsPage, Login/Logout, Signup should appear and link to
+    - last member url
+    - homepage if no member url
+- Login/Logout/Signup
+  - On success
+    - redirect to *home
+  - On failure
+    - keep user page and show errors
+- Fix undefined error for years served
+- Add in routes for login/logout/signup
+- Add in route for subs + add/remove sub within MemberInfo
 
 ## Technical Overview
 Front-end of Full-Stack Application using React to create a 
