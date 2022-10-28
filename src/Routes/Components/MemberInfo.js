@@ -16,7 +16,7 @@ function MemberInfo({ data }) {
 
     const chamber = () => {
         if (data.chamber === "Senate") return `Senator for ${data.years_served} years`;
-        if (data.chamber === "House") return `House Representative for ${data.yeas_served} years`;
+        if (data.chamber === "House") return `House Representative for ${data.years_served} years`;
     }
 
     console.log(Date(data.dob));
