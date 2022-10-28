@@ -9,17 +9,19 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
 - Setup ENV + API requests
   - API Routes created
   - ENV variable for baseURL needed on Netlify
-- Flesh out components
-- Remove "Home" Button from NavBar while on homepage.
-  - On SubsPage, Login/Logout, Signup should appear and link to
-    - last member url
-    - homepage if no member url
+- Refactor States component to cache states. Only one api call needed until hard refresh
+- Flesh out StateMembers
+  - Change Members from buttons to clickable cards with an image
+    - Requires backend route /api/congress/states/:state to cache / include secondary member info
+      - Front-end caches all the members it's retrieved
+    - Renders /api/congress/member/:id route not necessary until future expansion of features
 - Login/Logout/Signup
   - On success
     - redirect to *home
+    - Flash success message to user
   - On failure
     - keep user page and show errors
-- Add in routes for login/logout/signup
+    - Error handling needed
 - Add in route for subs + add/remove sub within MemberInfo
 
 ## Technical Overview

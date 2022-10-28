@@ -3,22 +3,37 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../Utilities/ContextCreator';
 
-function NavBar() {
+function NavBar({ setToken, setLastMember, lastMember }) {
 
     const path = useLocation().pathname;
-    console.log(path);
 
     const navigate = useNavigate();
 
     function handleHome() {
-        navigate("/");
+        navigate(lastMember);
     }
 
     function handleLogin() {
+        if (path.includes("member")) setLastMember(path);
         navigate("/login")
     }
 
+    function handleSubs() {
+        if (path.includes("member")) setLastMember(path);
+        navigate("/subs")
+    }
+
+    function handleSignup() {
+        if (path.includes("member")) setLastMember(path);
+        navigate("/signup")
+    }
+
+    function handleLogout() {
+        if (path.includes("member")) setLastMember(path);
+        setToken(null);
+    }
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -30,10 +45,52 @@ function NavBar() {
                         We want Home link back to the last member path user selected. We only redirect to "/" if user never selectes a member. Otherwise we redirect to lastMember */}
                         {path === "/" || path.includes("member") ? null : <Nav.Link onClick={handleHome}>Home</Nav.Link>}
 
+
+                        {!(path.includes("signup")) ?
+                            <UserContext.Consumer>
+                                {token => {
+                                    if (!token) {
+                                        return (
+                                            <Nav.Link onClick={handleSignup}>Sign Up</Nav.Link>
+                                        )
+                                    }
+                                }}
+                            </UserContext.Consumer> : null}
+
                         {/* Login Link Rules - renders if user not logged in and: 
                             - path !== /login
                         */}
-                        {!(path.includes("login")) ? <Nav.Link onClick={handleLogin}>Login</Nav.Link> : null}
+                        {!(path.includes("login")) ?
+                            <UserContext.Consumer>
+                                {token => {
+                                    if (!token) {
+                                        return (
+                                            <Nav.Link onClick={handleLogin}>Login</Nav.Link>
+                                        )
+                                    }
+                                }}
+                            </UserContext.Consumer> : null}
+
+                        <UserContext.Consumer>
+                            {token => {
+                                if (token) {
+                                    return (
+                                        <Nav.Link onClick={handleSubs}>Subs</Nav.Link>
+                                    )
+                                }
+
+                            }}
+                        </UserContext.Consumer>
+                        <UserContext.Consumer>
+                            {token => {
+                                if (token) {
+                                    return (
+                                        <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                                    )
+                                }
+                            }}
+                        </UserContext.Consumer>
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
