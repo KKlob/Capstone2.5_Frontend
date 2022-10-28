@@ -6,8 +6,6 @@ import Card from 'react-bootstrap/Card';
 
 function MemberInfo({ data }) {
 
-    console.log(data);
-
     const party = () => {
         if (data.party === "R") return "Republican";
         if (data.party === "D") return "Democrat";
@@ -18,8 +16,6 @@ function MemberInfo({ data }) {
         if (data.chamber === "Senate") return `Senator for ${data.years_served} years`;
         if (data.chamber === "House") return `House Representative for ${data.years_served} years`;
     }
-
-    console.log(Date(data.dob));
 
     return (
         <Container>

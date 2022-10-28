@@ -7,6 +7,11 @@ import NavBar from './Components/NavBar';
 
 function App() {
 
+  console.log("*****");
+  console.log("APP IS RENDERING");
+  console.log("******");
+
+
   return (
 
     <div id="AppContainer">
@@ -27,7 +32,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter >
-    </div>
+    </div >
   );
 }
 

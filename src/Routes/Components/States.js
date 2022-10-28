@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import API_Routes from '../../Utilities/apiRoutes';
 import Button from 'react-bootstrap/Button';
 import { v4 as uuid } from 'uuid';
+import Loading from './Loading';
 
 function States({ setState }) {
 
@@ -21,14 +22,21 @@ function States({ setState }) {
         setState(code);
     }
 
-    return (
-        <div id="States">
-            <p>This is the states component</p>
-            <ul>
-                {states ? states.map(state => <Button key={uuid()} onClick={handleClick} data-code={state.code}>{state.name}</Button>) : null}
-            </ul>
-        </div>
-    )
+    if (states) {
+        return (
+            <div id="States">
+                <p>This is the states component</p>
+                <ul>
+                    {states ? states.map(state => <Button key={uuid()} onClick={handleClick} data-code={state.code}>{state.name}</Button>) : null}
+                </ul>
+            </div>
+        )
+    } else {
+        return (
+            <Loading />
+        )
+    }
+
 }
 
 export default States;

@@ -6,13 +6,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 function NavBar() {
 
-    const location = useLocation().pathname;
-    console.log(location);
+    const path = useLocation().pathname;
+    console.log(path);
 
     const navigate = useNavigate();
 
-    function handleClick() {
+    function handleHome() {
         navigate("/");
+    }
+
+    function handleLogin() {
+        navigate("/login")
     }
 
     return (
@@ -24,7 +28,12 @@ function NavBar() {
                     <Nav>
                         {/* Home Link Rules - if path has /member we want to store that
                         We want Home link back to the last member path user selected. We only redirect to "/" if user never selectes a member. Otherwise we redirect to lastMember */}
-                        <Nav.Link onClick={handleClick}>Home</Nav.Link>
+                        {path === "/" || path.includes("member") ? null : <Nav.Link onClick={handleHome}>Home</Nav.Link>}
+
+                        {/* Login Link Rules - renders if user not logged in and: 
+                            - path !== /login
+                        */}
+                        {!(path.includes("login")) ? <Nav.Link onClick={handleLogin}>Login</Nav.Link> : null}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
