@@ -25,7 +25,7 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
 - Add in route for subs + add/remove sub within MemberInfo
 
 ## Technical Overview
-Front-end of Full-Stack Application using React to create a 
+Front-end Single-Page Application that can show congressional member information while also allowing a user to signup/login to subscribe to members for easy lookup.
 
 ### Tech Stack
 - React
