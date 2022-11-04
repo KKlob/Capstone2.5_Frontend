@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NotFound from './notFound';
 import Homepage from './Homepage';
 import MemberDisplay from './MemberDisplay';
+import SubsDisplay from './SubsDisplay';
 import NavBar from './Components/NavBar';
 import Form from './Form';
 import { UserContext } from '../Utilities/ContextCreator';
@@ -38,7 +39,7 @@ function App() {
               <Route path="/member/:id" element={<MemberDisplay />} />
               <Route path="/login" element={<Form setToken={setToken} lastMember={lastMember} />} />
               <Route path="/signup" element={<Form setToken={setToken} lastMember={lastMember} />} />
-              {/* <Route path="/subs" element={<SubsDisplay />} */}
+              <Route path="/subs" element={token ? <SubsDisplay lastMember={lastMember} /> : <Navigate to="/" />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

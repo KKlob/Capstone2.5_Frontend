@@ -41,7 +41,7 @@ function Form({ setToken, lastMember }) {
                                 data: { username, password }
                             });
 
-                            setToken(token.data)
+                            setToken(token.data.token)
                             navigate(lastMember);
                         } catch (error) {
                             console.log(error);
@@ -120,7 +120,7 @@ function Form({ setToken, lastMember }) {
                 >
                     {props => (
                         <form onSubmit={props.handleSubmit}>
-                            <labl htmlFor="username">Username:</labl>
+                            <label htmlFor="username">Username:</label>
                             <input
                                 type="text"
                                 onChange={props.handleChange}

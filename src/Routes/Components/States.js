@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import API_Routes from '../../Utilities/apiRoutes';
-import Button from 'react-bootstrap/Button';
 import { v4 as uuid } from 'uuid';
 import Loading from './Loading';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import StateCard from './StateCard';
 
 function States({ setState }) {
 
@@ -24,12 +26,14 @@ function States({ setState }) {
 
     if (states) {
         return (
-            <div id="States">
+            <div id="States" style={{ overflowY: 'scroll', height: '500px' }} >
                 <p>This is the states component</p>
-                <ul>
-                    {states ? states.map(state => <Button key={uuid()} onClick={handleClick} data-code={state.code}>{state.name}</Button>) : null}
-                </ul>
-            </div>
+                <Container id="StateCardContainer">
+                    <Row>
+                        {states ? states.map(state => <StateCard key={uuid()} handleClick={handleClick} state={state} />) : <Loading />}
+                    </Row>
+                </Container>
+            </ div>
         )
     } else {
         return (

@@ -4,6 +4,10 @@ import API_Routes from '../../Utilities/apiRoutes';
 import Button from 'react-bootstrap/Button';
 import { v4 as uuid } from 'uuid';
 import { useNavigate, useLocation } from 'react-router-dom';
+import MemberCard from './MemberCard';
+import Loading from './Loading';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 function StateMembers({ state, setState }) {
 
@@ -35,12 +39,15 @@ function StateMembers({ state, setState }) {
     }
 
     return (
-        <div id="StateMembers">
+        <div id="StateMembers" style={{ overflowY: 'scroll', height: '500px' }}>
             <p>This is the StateMembers component</p>
             <p><Button onClick={handleBackToStates}>Back to States</Button></p>
 
-            {members ? members.map(member => <Button key={uuid()} data-id={member.id} onClick={handleSelectMember}>{member.first_name} {member.last_name}</Button>) : null}
-
+            <Container id="StateMemberContainer">
+                <Row>
+                    {members ? members.map(member => <MemberCard key={uuid()} data-id={member.id} handleClick={handleSelectMember} member={member} />) : <Loading />}
+                </Row>
+            </Container>
         </div>
     )
 }

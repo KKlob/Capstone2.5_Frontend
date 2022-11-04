@@ -9,7 +9,7 @@ function CongressDisplay() {
     const [state, setState] = useState(null);
 
     return (
-        <div id="CongressDisplay">
+        <div id="CongressDisplay" style={{ height: '500px' }}>
             {/* If a state is chosen, display StateMembers, otherwise display States */}
             {state ? <StateMembers state={state} setState={setState} /> : <States setState={setState} />}
         </div>

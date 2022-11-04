@@ -18,11 +18,11 @@ function MemberInfo({ data }) {
     }
 
     return (
-        <Container>
+        <Container style={{ height: '500px' }}>
             <Row>
                 <Col xs={4}>
                     <Card>
-                        <Card.Img src={data.photo} alt={data.first_name + " " + data.last_name} />
+                        <Card.Img src={data.photo} alt={data.first_name + " " + data.last_name} style={{ height: '100%', maxHeight: '500px', width: 'auto', objectFit: 'cover' }} />
                         <Card.ImgOverlay />
                     </Card>
                 </Col>
