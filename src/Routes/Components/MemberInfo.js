@@ -23,7 +23,6 @@ function MemberInfo({ data }) {
                 <Col xs={4}>
                     <Card>
                         <Card.Img src={data.photo} alt={data.first_name + " " + data.last_name} style={{ height: '100%', maxHeight: '500px', width: 'auto', objectFit: 'cover' }} />
-                        <Card.ImgOverlay />
                     </Card>
                 </Col>
                 <Col xs={4}>
