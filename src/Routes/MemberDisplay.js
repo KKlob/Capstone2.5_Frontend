@@ -32,7 +32,7 @@ function MemberDisplay() {
     return (
         <div id="MemberDisplay">
             <ul>
-                {member && (member.id === id || memberCache[id]) ? <MemberInfo data={member} /> : <Loading />}
+                {member && (member.id === id || memberCache[id]) ? <MemberInfo data={member} /> : <Loading height={500} />}
             </ul>
         </div>
     )
