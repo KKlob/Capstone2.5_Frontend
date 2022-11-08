@@ -27,7 +27,6 @@ function States({ setState }) {
     if (states) {
         return (
             <div id="States" style={{ overflowY: 'scroll', height: '500px' }} >
-                <p>This is the states component</p>
                 <Container id="StateCardContainer">
                     <Row>
                         {states ? states.map(state => <StateCard key={uuid()} handleClick={handleClick} state={state} />) : <Loading />}

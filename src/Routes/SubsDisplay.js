@@ -11,13 +11,10 @@ function SubsDisplay() {
     let user;
     token ? user = jose.decodeJwt(token) : user = null;
 
-    console.log("user is :", user);
-
     return (
         <div id="SubsDisplay">
-            <p>This is the subs page for {user.username}</p>
 
-            <SubbedMembers />
+            <SubbedMembers user={user} token={token} />
         </div>
     )
 }

@@ -40,7 +40,6 @@ function StateMembers({ state, setState }) {
 
     return (
         <div id="StateMembers" style={{ overflowY: 'scroll', height: '500px' }}>
-            <p>This is the StateMembers component</p>
             <p><Button onClick={handleBackToStates}>Back to States</Button></p>
 
             <Container id="StateMemberContainer">

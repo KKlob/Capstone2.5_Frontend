@@ -31,7 +31,6 @@ function MemberDisplay() {
 
     return (
         <div id="MemberDisplay">
-            <p> this is the member display</p>
             <ul>
                 {member && (member.id === id || memberCache[id]) ? <MemberInfo data={member} /> : <Loading />}
             </ul>

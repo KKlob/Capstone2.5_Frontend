@@ -6,23 +6,15 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
 
 ## ToDo:
 - Write out Routes for app
-- Setup ENV + API requests
-  - API Routes created
-  - ENV variable for baseURL needed on Netlify
-- Refactor States component to cache states. Only one api call needed until hard refresh
-- Flesh out StateMembers
-  - Change Members from buttons to clickable cards with an image
-    - Requires backend route /api/congress/states/:state to cache / include secondary member info
-      - Front-end caches all the members it's retrieved
-    - Renders /api/congress/member/:id route not necessary until future expansion of features
 - Login/Logout/Signup
   - On success
-    - redirect to *home
     - Flash success message to user
   - On failure
     - keep user page and show errors
     - Error handling needed
-- Add in route for subs + add/remove sub within MemberInfo
+- Style all aspects of app
+- comment code
+- write tests
 
 ## Technical Overview
 Front-end Single-Page Application that can show congressional member information while also allowing a user to signup/login to subscribe to members for easy lookup.
