@@ -13,6 +13,12 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
     - keep user page and show errors
     - Error handling needed
 - Style all aspects of app
+  - States component
+  - State Members component
+  - MemberInfo Component
+  - NavBar
+  - Loading Component
+  - Add light/dark themes
 - comment code
 - write tests
 
