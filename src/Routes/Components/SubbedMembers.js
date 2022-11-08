@@ -1,36 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../Utilities/ContextCreator';
-import * as jose from 'jose';
-import API_Routes from '../../Utilities/apiRoutes';
+import React, { useContext } from 'react';
 import MemberInfo from './MemberInfo';
 import Loading from './Loading';
-import axios from 'axios';
 import { v4 as uuid } from 'uuid';
+import { SubsContext } from '../../Utilities/ContextCreator';
 
 function SubbedMembers() {
 
-    const token = useContext(UserContext);
-    let user;
-    token ? user = jose.decodeJwt(token) : user = null;
-
-    const [subs, setSubs] = useState(null);
-
-    console.log(subs);
-
-    useEffect(() => {
-        async function fetchMembers() {
-            const resp = await axios({
-                method: 'get',
-                url: API_Routes.baseURL + API_Routes.user.getSubs,
-                headers: { 'X-user-token': token }
-            })
-            setSubs(resp.data.subs);
-        }
-
-        if (token && !subs) {
-            fetchMembers();
-        }
-    }, [token, subs])
+    const { subs } = useContext(SubsContext);
 
     return (
         <div id="SubbedMembersContainer">
