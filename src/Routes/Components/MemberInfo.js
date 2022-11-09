@@ -4,9 +4,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Stack from 'react-bootstrap/Stack';
 import { SubsContext, UserContext } from '../../Utilities/ContextCreator';
 import API_Routes from '../../Utilities/apiRoutes';
 import axios from 'axios';
+import { v4 as uuid } from 'uuid';
 
 function MemberInfo({ data }) {
 
@@ -83,20 +85,44 @@ function MemberInfo({ data }) {
             <Row>
                 <Col xs={4}>
                     <Card>
-                        <Card.Img src={data.photo} alt={data.first_name + " " + data.last_name} style={{ height: '100%', maxHeight: '500px', width: 'auto', objectFit: 'cover' }} />
+                        <Card.Img variant="top" src={data.photo} alt={data.first_name + " " + data.last_name} style={{ height: '100%', maxHeight: '500px', width: 'auto', objectFit: 'cover' }} />
                     </Card>
+                </Col>
+                <Col xs={4}>
+                    <Stack gap={1}>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>{data.first_name} {data.last_name}</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">{data.State.name} {party()}</Card.Subtitle>
+                                <Card.Text>
+                                    {chamber()}
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        {Object.keys(data).map(key => {
+                            if (["total_votes", "missed_votes", "bills_sponsored", "votes_with_party_pct"].includes(key)) {
+                                return (
+                                    <Card key={uuid()}>
+                                        <Card.Body>
+                                            <Card.Title>{key}</Card.Title>
+                                            <Card.Text>{data[key]}</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                )
+                            } else {
+                                return null
+                            }
+                        })}
+                    </Stack>
                 </Col>
                 <Col xs={4}>
                     <Card>
                         <Card.Body>
-                            <Card.Title>{data.first_name} {data.last_name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{data.State.name} {party()}</Card.Subtitle>
-                            <Card.Text>
-                                {chamber()}
-                            </Card.Text>
-                            <Card.Text>
-
-                            </Card.Text>
+                            <Card.Title>Socials</Card.Title>
+                            <Card.Link href={data.socials.twitter}>Twitter</Card.Link>
+                            <Card.Link href={data.socials.facebook}>Facebook</Card.Link>
+                            <Card.Link href={data.socials.youtube}>Youtube</Card.Link>
+                            <Card.Link href={data.site}>Government Site</Card.Link>
                         </Card.Body>
                     </Card>
                 </Col>
