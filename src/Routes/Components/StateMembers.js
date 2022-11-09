@@ -8,12 +8,13 @@ import MemberCard from './MemberCard';
 import Loading from './Loading';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function StateMembers({ state, setState }) {
 
     const navigate = useNavigate();
 
-    const [members, setMembers] = useState(null);
+    const [members, setMembers] = useState([]);
 
     const path = useLocation().pathname;
 
@@ -38,16 +39,30 @@ function StateMembers({ state, setState }) {
         }
     }
 
-    return (
-        <div id="StateMembers" style={{ overflowY: 'scroll', height: '500px' }}>
-            <p><Button onClick={handleBackToStates}>Back to States</Button></p>
+    const senateMembers = members.filter(member => member.chamber === "Senate");
+    const houseMembers = members.filter(member => member.chamber === "House");
 
-            <Container id="StateMemberContainer">
-                <Row>
-                    {members ? members.map(member => <MemberCard key={uuid()} data-id={member.id} handleClick={handleSelectMember} member={member} />) : <Loading />}
-                </Row>
-            </Container>
-        </div>
+    return (
+        members.length ? <Container id="StateMemberContainer" style={{ overflowY: 'scroll', height: '500px' }}>
+            <Row className="justify-content-center">
+                <Col xs={12} className="text-center d-grid">
+                    <Button onClick={handleBackToStates} size="lg">Return to States</Button>
+                </Col>
+            </Row>
+            <Row className="justify-content-center">
+                <Col xs={12} className="text-center" style={{ marginTop: '10px', marginBot: '10px' }}>
+                    <h3>Senators</h3>
+                </Col>
+                {senateMembers.map(member => <MemberCard key={uuid()} member={member} handleClick={handleSelectMember} colSize={2} />)
+                }
+            </Row>
+            <Row className="justify-content-center">
+                <Col xs={12} className="text-center" style={{ marginTop: '15px', marginBot: '10px' }}>
+                    <h3>House Representatives</h3>
+                </Col>
+                {houseMembers.map(member => <MemberCard key={uuid()} member={member} handleClick={handleSelectMember} colSize={2} />)}
+            </Row>
+        </Container> : <Loading />
     )
 }
 

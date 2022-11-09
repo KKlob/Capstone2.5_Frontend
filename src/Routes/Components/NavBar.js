@@ -73,7 +73,7 @@ function NavBar({ setToken, setLastMember, lastMember }) {
 
                         <UserContext.Consumer>
                             {token => {
-                                if (token) {
+                                if (token && path !== "/subs") {
                                     return (
                                         <Nav.Link onClick={handleSubs}>Subs</Nav.Link>
                                     )
