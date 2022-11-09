@@ -6,7 +6,7 @@ function StateCard({ state, handleClick }) {
 
     return (
         <Col style={{ marginTop: '10px' }}>
-            <Card style={{ width: '150px', height: '60px' }}>
+            <Card style={{ width: '150px', height: '60px', cursor: 'pointer' }}>
                 <Card.Body className="text-center">
                     <Card.Title style={{ fontSize: '15px', }}>{state.name}</Card.Title>
                     <Card.Link onClick={handleClick} className="stretched-link" data-code={state.code} />
