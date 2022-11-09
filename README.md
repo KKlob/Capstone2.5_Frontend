@@ -12,6 +12,10 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
         - Independent will only show if exists
       - Each state card will get a background color matching dominant party
         - even amounts of D/R wil be purple
+- State Members Display
+  - Backend work needed
+    - Once complete:
+      - If a State member is a vice pres / special member exclude them from Senate/House member sections
 - Login/Logout/Signup
   - On success
     - Flash success message to user
