@@ -4,6 +4,7 @@ import StateMembers from './StateMembers';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 function CongressDisplay() {
 
@@ -12,11 +13,16 @@ function CongressDisplay() {
     const [state, setState] = useState(null);
 
     return (
-        <Container id="CongressDisplay" style={{ height: '525px', marginTop: '20px', border: '1px solid black', borderRadius: '15px', padding: '10px 5px 5px 5px' }}>
-            <Row className="justify-content-center">
+        <Container id="CongressDisplay" style={{ height: '700px', marginTop: '20px', border: '1px solid black', borderRadius: '15px', padding: '10px 5px 5px 5px' }}>
+            {state ? <Row className="justify-content-center">
+                <Col xs={8} className="text-center d-grid">
+                    <Button onClick={() => setState(null)} size="lg">Return to States</Button>
+                </Col>
+            </Row> : null}
+            <Row className="justify-content-center" style={{ marginTop: '5px' }}>
                 <Col xs={12}>
                     {/* If a state is chosen, display StateMembers, otherwise display States */}
-                    {state ? <StateMembers state={state} setState={setState} /> : <States setState={setState} />}
+                    {state ? <StateMembers state={state} /> : <States setState={setState} />}
                 </Col>
             </Row>
         </Container>
