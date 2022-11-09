@@ -83,7 +83,7 @@ function MemberInfo({ data }) {
     }
 
     return (
-        <Container style={path === "/subs" ? { border: '1px solid black', borderRadius: '15px', marginTop: '10px' } : null}>
+        <Container style={path === "/subs" ? { border: '1px solid black', borderRadius: '15px', marginTop: '10px', marginBottom: '10px' } : null}>
             <Row style={{ padding: '20px 5px 20px 5px' }}>
                 <Col xs={4}>
                     <Card style={{ borderRadius: '15px' }}>
