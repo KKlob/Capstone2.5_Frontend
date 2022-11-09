@@ -4,6 +4,7 @@ import axios from 'axios';
 import API_Routes from '../Utilities/apiRoutes';
 import MemberInfo from './Components/MemberInfo';
 import Loading from './Components/Loading';
+import Container from 'react-bootstrap/Container';
 
 function MemberDisplay() {
 
@@ -30,11 +31,9 @@ function MemberDisplay() {
     }, [id, memberCache])
 
     return (
-        <div id="MemberDisplay">
-            <ul>
-                {member && (member.id === id || memberCache[id]) ? <MemberInfo data={member} /> : <Loading height={500} />}
-            </ul>
-        </div>
+        <Container id="MemberDisplay" style={{ height: '475px', marginTop: '10px', border: '1px solid black', borderRadius: '15px', padding: '10px 5px 5px 5px' }}>
+            {member && (member.id === id || memberCache[id]) ? <MemberInfo data={member} /> : <Loading height={500} />}
+        </Container>
     )
 }
 
