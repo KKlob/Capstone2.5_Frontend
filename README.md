@@ -5,14 +5,26 @@ Who's That Congressperson? - React Front-End - Mobile-First UI Structure
 Responsive, intuitive web app built primarily for use on a smartphone or other hand-held device. Single-Page-Application allowing easy access to relevent Congressional Member information. Simplifying the way we understand how our Politians represent us. Capstone includes congressional member lookup for most recent congress + user login to store subscribed members for quick lookup. Anyone wanting to have a quick informational lookup of US Congress Members would enjoy using this app.
 
 ## ToDo:
-- Write out Routes for app
-- Setup ENV + API requests
-  - API Routes created
-- Design base app container
-- Flesh out components
+- Login/Logout/Signup
+  - On success
+    - Flash success message to user
+  - On failure
+    - keep user page and show errors
+    - Error handling needed
+- Style all aspects of app
+  - States component
+  - State Members component
+  - MemberInfo Component
+  - NavBar
+  - Loading Component
+  - Add light/dark themes
+- Add incrememt to congress#
+  - every odd-year on Jan 3. incrememt to next congress
+- comment code
+- write tests
 
 ## Technical Overview
-Front-end of Full-Stack Application using React to create a 
+Front-end Single-Page Application that can show congressional member information while also allowing a user to signup/login to subscribe to members for easy lookup.
 
 ### Tech Stack
 - React

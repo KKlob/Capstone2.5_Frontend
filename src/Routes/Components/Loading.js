@@ -2,8 +2,8 @@ import React from 'react';
 
 function Loading() {
     return (
-        <div className="loading">
-            <p>Loadin data...</p>
+        <div className="Loading" style={{ height: "500px" }}>
+            <p>Loading Data...</p>
         </div>
     )
 }

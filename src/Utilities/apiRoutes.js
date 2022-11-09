@@ -9,7 +9,7 @@ const API_Routes = {
     },
     "user": {
         "login": "/user/login",
-        "singup": "/user/signup",
+        "signup": "/user/signup",
         "delete": "/user/delete",
         "getSubs": "/user/subs",
         "addSub": "/user/subs/add",
