@@ -8,6 +8,8 @@ function SubbedMembers() {
 
     const { subs } = useContext(SubsContext);
 
+    console.log(subs);
+
     return (
         <div id="SubbedMembersContainer">
             {subs ? subs.map(member => <MemberInfo data={member} key={uuid()} />) : <Loading />}

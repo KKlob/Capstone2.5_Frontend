@@ -81,11 +81,11 @@ function MemberInfo({ data }) {
     }
 
     return (
-        <Container style={{ height: '500px' }}>
-            <Row>
+        <Container style={{ height: '500px', maxHeight: '500px' }}>
+            <Row className="align-items-center">
                 <Col xs={4}>
                     <Card>
-                        <Card.Img variant="top" src={data.photo} alt={data.first_name + " " + data.last_name} style={{ height: '100%', maxHeight: '500px', width: 'auto', objectFit: 'cover' }} />
+                        <Card.Img variant="top" src={data.photo} alt={data.first_name + " " + data.last_name} style={{ height: '100%', maxHeight: '450px', width: 'auto', objectFit: 'contain' }} />
                     </Card>
                 </Col>
                 <Col xs={4}>
@@ -99,41 +99,36 @@ function MemberInfo({ data }) {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        {Object.keys(data).map(key => {
-                            if (["total_votes", "missed_votes", "bills_sponsored", "votes_with_party_pct"].includes(key)) {
-                                return (
-                                    <Card key={uuid()}>
-                                        <Card.Body>
-                                            <Card.Title>{key}</Card.Title>
-                                            <Card.Text>{data[key]}</Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                )
-                            } else {
-                                return null
-                            }
-                        })}
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Socials</Card.Title>
+                                {data.socials.twitter ? <Card.Link href={data.socials.twitter}>Twitter</Card.Link> : null}
+                                {data.socials.facebook ? <Card.Link href={data.socials.facebook}>Facebook</Card.Link> : null}
+                                {data.socials.youtube ? <Card.Link href={data.socials.youtube}>Youtube</Card.Link> : null}
+                                {data.site ? <Card.Link href={data.site}>Government Site</Card.Link> : null}
+                            </Card.Body>
+                        </Card>
+                        {token ?
+                            (checkIfSub(data) ? <Button onClick={handleRemove}>Remove Sub</Button> : <Button onClick={handleAdd}>Add Sub</Button>) : null}
                     </Stack>
                 </Col>
                 <Col xs={4}>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Socials</Card.Title>
-                            <Card.Link href={data.socials.twitter}>Twitter</Card.Link>
-                            <Card.Link href={data.socials.facebook}>Facebook</Card.Link>
-                            <Card.Link href={data.socials.youtube}>Youtube</Card.Link>
-                            <Card.Link href={data.site}>Government Site</Card.Link>
-                        </Card.Body>
-                    </Card>
+                    {Object.keys(data).map(key => {
+                        if (["total_votes", "missed_votes", "bills_sponsored", "votes_with_party_pct"].includes(key)) {
+                            return (
+                                <Card key={uuid()}>
+                                    <Card.Body>
+                                        <Card.Title>{key}</Card.Title>
+                                        <Card.Text>{data[key]}</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            )
+                        } else {
+                            return null
+                        }
+                    })}
                 </Col>
             </Row>
-            {token ?
-                <Row className="justify-content-center">
-                    <Col xs={4}>
-                        {checkIfSub(data) ? <Button onClick={handleRemove}>Remove Sub</Button> : <Button onClick={handleAdd}>Add Sub</Button>}
-                    </Col>
-                </Row> : null
-            }
         </Container>
     )
 }
