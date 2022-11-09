@@ -26,13 +26,11 @@ function States({ setState }) {
 
     if (states) {
         return (
-            <div id="States" style={{ overflowY: 'scroll', height: '500px' }} >
-                <Container id="StateCardContainer">
-                    <Row>
-                        {states ? states.map(state => <StateCard key={uuid()} handleClick={handleClick} state={state} />) : <Loading />}
-                    </Row>
-                </Container>
-            </ div>
+            <Container id="StateCardContainer" style={{ overflowY: 'scroll', height: '500px' }}>
+                <Row>
+                    {states ? states.map(state => <StateCard key={uuid()} handleClick={handleClick} state={state} />) : <Loading />}
+                </Row>
+            </Container>
         )
     } else {
         return (
