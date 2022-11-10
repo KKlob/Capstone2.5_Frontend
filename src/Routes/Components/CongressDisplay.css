@@ -1,0 +1,29 @@
+#CongressDisplay {
+    margin-top: 10px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+}
+
+/* md sizing */
+@media (min-width: 768px) {
+    #CongressDisplay {
+        background-color: lightgreen;
+    }
+}
+
+/* lg sizing */
+@media (min-width: 992px) {
+    #CongressDisplay {
+        background-color: lightpink;
+    }
+}
+
+/* xlsizing */
+@media (min-width: 1200px) {
+    #CongressDisplay {
+        background-color: lightcyan;
+    }
+}
