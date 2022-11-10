@@ -6,12 +6,8 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
 
 ## ToDo:
 - States Display
-  - Backend work needed
-    - Once complete:
-      - Each state card will show member counts for each party
-        - Independent will only show if exists
-      - Each state card will get a background color matching dominant party
-        - even amounts of D/R wil be purple
+  - Each state card will get a background color matching dominant party
+    - even amounts of D/R wil be purple
 - Login/Logout/Signup
   - On success
     - Flash success message to user
@@ -20,8 +16,6 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
     - Error handling needed
 - Style all aspects of app - Needs to focus on mobile presentation Upwards
   - Login / Signup Form pages
-  - States component
-  - State Members component
   - MemberInfo Component
   - NavBar
   - Loading Component
