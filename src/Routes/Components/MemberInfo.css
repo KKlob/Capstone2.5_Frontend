@@ -1,0 +1,54 @@
+/* xs css */
+#MemberInfoContainer .row {
+    justify-content: center;
+}
+
+.memberImg .card {
+    border-radius: 15px;
+}
+
+.memberImg.card .card-img-overlay {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.member-info-col .row {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.card-title {
+    font-size: 15px;
+}
+
+.card-subtitle {
+    font-size: 11px;
+}
+
+.card-text {
+    font-size: 13px;
+}
+
+a.card-link {
+    font-size: 13px;
+}
+
+.member-socials-col {
+    margin-top: 10px;
+}
+
+
+
+/* sm css */
+@media (min-width: 540px) {}
+
+/* md css */
+@media (min-width: 768px) {}
+
+/* lg css */
+@media (min-width: 992px) {}
+
+/* xl css */
+@media (min-width: 1200px) {}

@@ -8,6 +8,7 @@ import Loading from './Loading';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import './StateMembers.css';
 
 function StateMembers({ state }) {
 
@@ -38,19 +39,19 @@ function StateMembers({ state }) {
     const houseMembers = members.filter(member => member.chamber === "House");
 
     return (
-        members.length ? <Container id="StateMemberContainer" style={{ overflowY: 'scroll', height: '625px' }}>
+        members.length ? <Container id="StateMemberContainer">
             {senateMembers.length > 0 ? <Row className="justify-content-center">
-                <Col xs={12} className="text-center" style={{ marginTop: '10px', marginBot: '10px' }}>
+                <Col xs={12} className="chamber-heading text-center">
                     <h3>Senators</h3>
                 </Col>
-                {senateMembers.map(member => <MemberCard key={uuid()} member={member} handleClick={handleSelectMember} colSize={2} />)
+                {senateMembers.map(member => <MemberCard key={uuid()} member={member} handleClick={handleSelectMember} colSize={6} />)
                 }
             </Row> : null}
             {houseMembers.length > 0 ? <Row className="justify-content-center">
-                <Col xs={12} className="text-center" style={{ marginTop: '15px', marginBot: '10px' }}>
+                <Col xs={12} className="chamber-heading text-center">
                     <h3>House Representatives</h3>
                 </Col>
-                {houseMembers.map(member => <MemberCard key={uuid()} member={member} handleClick={handleSelectMember} colSize={2} />)}
+                {houseMembers.map(member => <MemberCard key={uuid()} member={member} handleClick={handleSelectMember} colSize={6} />)}
             </Row> : null}
         </Container> : <Loading />
     )

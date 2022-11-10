@@ -1,0 +1,53 @@
+/* xs css - breakpoint */
+.memberCard {
+    height: 240px;
+    width: auto;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.memberCard .card-img-top {
+    height: 150px;
+    width: auto;
+    object-fit: contain;
+}
+
+.memberCard .card-title {
+    font-size: 15px;
+}
+
+.memberCard .card-subtitle {
+    font-size: 12px;
+}
+
+
+/* sm css */
+@media (min-width: 540px) {}
+
+/* md css - breakpoint  */
+@media (min-width: 768px) {
+    .memberCard .card-img-top {
+        height: 200px;
+    }
+
+    .memberCard .card-title {
+        font-size: 20px;
+    }
+
+    .memberCard .card-subtitle {
+        font-size: 15px;
+    }
+}
+
+/* lg css - breakpoint */
+@media (min-width: 992px) {
+    .memberCard .card-img-top {
+        height: 225px;
+    }
+}
+
+/* xl css - breakpoint */
+@media (min-width: 1200px) {}

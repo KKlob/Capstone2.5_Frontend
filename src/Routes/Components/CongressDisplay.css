@@ -1,10 +1,15 @@
 #CongressDisplay {
     margin-top: 10px;
+    margin-bottom: 10px;
     height: 600px;
     border: 1px solid black;
     border-radius: 15px;
-    overflow-y: scroll;
     padding-bottom: 10px;
+}
+
+#rts-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* md sizing */

@@ -1,5 +1,8 @@
 /* xs css */
-
+#StateCardContainer {
+    height: 590px;
+    overflow-y: scroll;
+}
 
 /* sm css */
 @media (min-width: 540px) {}

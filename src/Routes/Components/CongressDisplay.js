@@ -16,7 +16,7 @@ function CongressDisplay() {
     return (
         <Container id="CongressDisplay">
             {state ? <Row className="justify-content-center">
-                <Col xs={8} className="text-center d-grid">
+                <Col id="rts-button" xs={8} className="text-center d-grid">
                     <Button onClick={() => setState(null)} size="lg">Return to States</Button>
                 </Col>
             </Row> : null}
