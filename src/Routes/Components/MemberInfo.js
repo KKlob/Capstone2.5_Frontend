@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import { SubsContext, UserContext } from '../../Utilities/ContextCreator';
 import API_Routes from '../../Utilities/apiRoutes';
 import axios from 'axios';
-import { v4 as uuid } from 'uuid';
 import './MemberInfo.css';
 
 function MemberInfo({ data }) {
@@ -106,8 +105,8 @@ function MemberInfo({ data }) {
                                     </Card.Body>
                                 </Card>
                             </Col>
-                            <Col className="member-socials-col" xs={12}>
-                                <Card>
+                            <Col xs={12}>
+                                <Card className="member-socials-card">
                                     <Card.Body className="text-center">
                                         <Card.Title>Socials</Card.Title>
                                         <Card.Text>
@@ -122,23 +121,39 @@ function MemberInfo({ data }) {
                                 </Card>
                             </Col>
                         </Row>
-                        <Row>
-                            {Object.keys(data).map(key => {
-                                if (["total_votes", "missed_votes", "bills_sponsored", "votes_with_party_pct"].includes(key)) {
-                                    return (
-                                        <Col xs={10} key={uuid()}>
-                                            <Card>
-                                                <Card.Body className="text-center">
-                                                    <Card.Title>{key}</Card.Title>
-                                                    <Card.Text>{data[key]}</Card.Text>
-                                                </Card.Body>
-                                            </Card>
-                                        </Col>
-                                    )
-                                } else {
-                                    return null
-                                }
-                            })}
+                        <Row xs={2} className="member-data-row">
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>Total Votes</Card.Title>
+                                        <Card.Text>{data.total_votes} votes</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>Missed Votes</Card.Title>
+                                        <Card.Text>{data.missed_votes} votes</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>Bills Sponsored</Card.Title>
+                                        <Card.Text>{data.bills_sponsored} Bills</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>% of Votes With Party</Card.Title>
+                                        <Card.Text>{data.votes_with_party_pct}%</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
                         </Row>
                         <Row style={{ marginTop: '20px' }}>
                             <Col xs={12} className="d-grid">
