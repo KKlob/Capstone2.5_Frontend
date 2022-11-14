@@ -91,7 +91,7 @@ function MemberInfo({ data }) {
                         <Card.ImgOverlay />
                     </Card>
                 </Col>
-                <Col className="member-info-col" xs={12}>
+                <Col className="member-info-col" xs={12} md={6}>
                     <Container>
                         <Row>
                             <Col xs={8}>

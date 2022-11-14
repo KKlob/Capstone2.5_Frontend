@@ -16,7 +16,6 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
     - Error handling needed
 - Style all aspects of app - Needs to focus on mobile presentation Upwards
   - Login / Signup Form pages
-  - MemberInfo Component
   - NavBar
   - Loading Component
   - Add light/dark themes

@@ -1,13 +1,19 @@
 /* xs css */
-
+/* background white */
 /* sm css */
 @media (min-width: 540px) {}
 
 /* md css */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    /* background lightgreen */
+}
 
 /* lg css */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    /* background lightpink */
+}
 
 /* xl css */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    /* background lightcyan */
+}

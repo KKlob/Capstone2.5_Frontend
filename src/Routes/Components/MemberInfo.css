@@ -50,11 +50,59 @@ a.card-link {
 /* sm css */
 @media (min-width: 540px) {}
 
-/* md css */
+/* md css - breakpoint */
 @media (min-width: 768px) {}
 
-/* lg css */
-@media (min-width: 992px) {}
+/* lg css - breakpoint*/
+@media (min-width: 992px) {
+    .memberImg .card {
+        margin-top: 40px;
+    }
 
-/* xl css */
-@media (min-width: 1200px) {}
+    .member-info-col .card-title {
+        font-size: 16px;
+    }
+
+    .member-info-col .card-subtitle {
+        font-size: 14px;
+    }
+
+    .member-info-col .card-text {
+        font-size: 15px;
+    }
+
+    a.card-link {
+        font-size: 15px;
+    }
+}
+
+/* xl css - breakpoint*/
+@media (min-width: 1200px) {
+    .member-data-row .card {
+        margin-bottom: 3px;
+    }
+
+    .member-info-col .row {
+        margin-top: 0px;
+    }
+
+    .member-info-col {
+        margin-bottom: 0px;
+    }
+
+    .memberImg .card {
+        margin-top: 10px;
+    }
+
+    .member-info-col .card-title {
+        font-size: 18px;
+    }
+
+    .member-info-col .card-subtitle {
+        font-size: 16px;
+    }
+
+    .member-info-col .card-text {
+        font-size: 17px;
+    }
+}
