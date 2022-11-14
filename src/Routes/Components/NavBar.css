@@ -1,0 +1,43 @@
+/* xs css */
+nav {
+    background-color: lightgray;
+}
+
+.navbar-brand {
+    border-bottom: 2px solid gray;
+}
+
+nav .navbar-toggler {
+    background-color: gray;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+a.nav-link {
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 40%;
+    align-self: left;
+    margin-top: 5px;
+}
+
+/* sm css */
+@media (min-width: 540px) {}
+
+/* md css */
+@media (min-width: 768px) {
+    a.nav-link {
+        width: 100px;
+        margin-right: 5px;
+    }
+}
+
+/* lg css */
+@media (min-width: 992px) {}
+
+/* xl css */
+@media (min-width: 1200px) {}

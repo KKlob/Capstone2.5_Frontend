@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Utilities/ContextCreator';
+import './NavBar.css';
 
 function NavBar({ setToken, setLastMember, lastMember }) {
 
@@ -35,9 +36,9 @@ function NavBar({ setToken, setLastMember, lastMember }) {
         setToken(null);
     }
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="md" sticky="top">
             <Container>
-                <Navbar.Brand>Who's That CongressPerson?</Navbar.Brand>
+                <Navbar.Brand collapseOnSelect>Who's That CongressPerson?</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
