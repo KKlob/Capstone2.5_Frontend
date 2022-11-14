@@ -37,10 +37,12 @@
 
 a.card-link {
     font-size: 13px;
+    word-wrap: normal;
 }
 
 .member-socials-card {
     margin-top: 10px;
+    text-align: center;
 }
 
 .member-data-row .card {
@@ -48,7 +50,11 @@ a.card-link {
 }
 
 /* sm css */
-@media (min-width: 540px) {}
+@media (min-width: 540px) {
+    .memberImg .card {
+        margin-top: 25px;
+    }
+}
 
 /* md css - breakpoint */
 @media (min-width: 768px) {}
@@ -78,6 +84,10 @@ a.card-link {
 
 /* xl css - breakpoint*/
 @media (min-width: 1200px) {
+    .member-socials-card {
+        margin-bottom: 5px;
+    }
+
     .member-data-row .card {
         margin-bottom: 3px;
     }

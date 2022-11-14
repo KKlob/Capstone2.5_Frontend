@@ -15,6 +15,17 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
     - keep user page and show errors
     - Error handling needed
 - Style all aspects of app - Needs to focus on mobile presentation Upwards
+  - Work on adding general background styling for:
+    - Homepage
+    - States
+    - MemberInfo
+  - Work on adding transitions:
+    - MemberInfo showing
+    - Homepage loading
+    - StateCards Loading
+    - StateMembers Loading
+    - Signup/login pages loading
+    - Subs page loading
   - Add light/dark themes
 - Add incrememt to congress#
   - every odd-year on Jan 3. incrememt to next congress
