@@ -13,22 +13,10 @@
 }
 
 /* md sizing */
-@media (min-width: 768px) {
-    #CongressDisplay {
-        background-color: lightgreen;
-    }
-}
+@media (min-width: 768px) {}
 
 /* lg sizing */
-@media (min-width: 992px) {
-    #CongressDisplay {
-        background-color: lightpink;
-    }
-}
+@media (min-width: 992px) {}
 
 /* xlsizing */
-@media (min-width: 1200px) {
-    #CongressDisplay {
-        background-color: lightcyan;
-    }
-}
+@media (min-width: 1200px) {}

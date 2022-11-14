@@ -8,7 +8,7 @@ function SubbedMembers() {
 
     const { subs } = useContext(SubsContext);
 
-    console.log(subs);
+    // console.log(subs);
 
     return (
         <div id="SubbedMembersContainer">
