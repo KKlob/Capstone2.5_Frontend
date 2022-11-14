@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { SubsContext, UserContext } from '../../Utilities/ContextCreator';
 import API_Routes from '../../Utilities/apiRoutes';
 import axios from 'axios';
-import { v4 as uuid } from 'uuid';
+import './MemberInfo.css';
 
 function MemberInfo({ data }) {
 
@@ -83,19 +83,19 @@ function MemberInfo({ data }) {
     }
 
     return (
-        <Container style={path === "/subs" ? { border: '1px solid black', borderRadius: '15px', marginTop: '10px', marginBottom: '10px' } : null}>
-            <Row style={{ padding: '20px 5px 20px 5px' }}>
-                <Col xs={4}>
-                    <Card style={{ borderRadius: '15px' }}>
-                        <Card.Img src={data.photo} alt={data.first_name + " " + data.last_name} style={{ height: '100%', maxHeight: '400px', width: 'auto', objectFit: 'contain', borderRadius: '15px' }} />
+        <Container id="MemberInfoContainer" style={path === "/subs" ? { border: '1px solid black', borderRadius: '15px', marginTop: '10px', marginBottom: '10px' } : null}>
+            <Row xs={1} md={2}>
+                <Col className="memberImg" xs={7} md={6} lg={4}>
+                    <Card>
+                        <Card.Img src={data.photo} alt={data.first_name + " " + data.last_name} />
                         <Card.ImgOverlay />
                     </Card>
                 </Col>
-                <Col xs={8} style={{ marginTop: '25px' }}>
+                <Col className="member-info-col" xs={12} md={6}>
                     <Container>
-                        <Row className="justify-content-center" style={{ marginTop: '10px' }}>
-                            <Col xs={4}>
-                                <Card>
+                        <Row>
+                            <Col xs={8}>
+                                <Card className="member-name-card">
                                     <Card.Body className="text-center">
                                         <Card.Title>{data.first_name} {data.last_name}</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">{data.State.name} {party()}</Card.Subtitle>
@@ -105,35 +105,55 @@ function MemberInfo({ data }) {
                                     </Card.Body>
                                 </Card>
                             </Col>
-                            <Col xs={8} style={{ marginTop: '10px' }}>
-                                <Card>
+                            <Col xs={12}>
+                                <Card className="member-socials-card">
                                     <Card.Body className="text-center">
                                         <Card.Title>Socials</Card.Title>
-                                        {data.socials.twitter ? <Card.Link href={data.socials.twitter}>Twitter</Card.Link> : null}
-                                        {data.socials.facebook ? <Card.Link href={data.socials.facebook}>Facebook</Card.Link> : null}
-                                        {data.socials.youtube ? <Card.Link href={data.socials.youtube}>Youtube</Card.Link> : null}
-                                        {data.site ? <Card.Link href={data.site}>Government Site</Card.Link> : null}
+                                        <Card.Text>
+                                            {data.socials.twitter ? <Card.Link href={data.socials.twitter}>Twitter</Card.Link> : null}
+                                            {data.socials.facebook ? <Card.Link href={data.socials.facebook}>Facebook</Card.Link> : null}
+                                            {data.socials.youtube ? <Card.Link href={data.socials.youtube}>Youtube</Card.Link> : null}
+                                        </Card.Text>
+                                        <Card.Text>
+                                            {data.site ? <Card.Link href={data.site}>Government Site</Card.Link> : null}
+                                        </Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>
                         </Row>
-                        <Row style={{ marginTop: '20px' }}>
-                            {Object.keys(data).map(key => {
-                                if (["total_votes", "missed_votes", "bills_sponsored", "votes_with_party_pct"].includes(key)) {
-                                    return (
-                                        <Col>
-                                            <Card key={uuid()}>
-                                                <Card.Body>
-                                                    <Card.Title>{key}</Card.Title>
-                                                    <Card.Text>{data[key]}</Card.Text>
-                                                </Card.Body>
-                                            </Card>
-                                        </Col>
-                                    )
-                                } else {
-                                    return null
-                                }
-                            })}
+                        <Row xs={2} className="member-data-row">
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>Total Votes</Card.Title>
+                                        <Card.Text>{data.total_votes} votes</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>Missed Votes</Card.Title>
+                                        <Card.Text>{data.missed_votes} votes</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>Bills Sponsored</Card.Title>
+                                        <Card.Text>{data.bills_sponsored} Bills</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                            <Col xs={6}>
+                                <Card>
+                                    <Card.Body className="text-center">
+                                        <Card.Title>% of Votes With Party</Card.Title>
+                                        <Card.Text>{data.votes_with_party_pct}%</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
                         </Row>
                         <Row style={{ marginTop: '20px' }}>
                             <Col xs={12} className="d-grid">

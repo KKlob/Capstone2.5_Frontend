@@ -1,0 +1,22 @@
+/* xs css */
+#StateMemberContainer {
+    overflow-y: scroll;
+    height: 525px;
+}
+
+.chamber-heading {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* sm css */
+@media (min-width: 540px) {}
+
+/* md css - breakpoint */
+@media (min-width: 768px) {}
+
+/* lg css - breakpoint */
+@media (min-width: 992px) {}
+
+/* xl css - breakpoint */
+@media (min-width: 1200px) {}

@@ -31,7 +31,7 @@ function MemberDisplay() {
     }, [id, memberCache])
 
     return (
-        <Container id="MemberDisplay" style={{ height: '475px', marginTop: '10px', border: '1px solid black', borderRadius: '15px', padding: '10px 5px 5px 5px' }}>
+        <Container id="MemberDisplay" style={{ height: '475px', marginTop: '10px', border: '1px solid black', borderRadius: '15px', padding: '10px 5px 5px 5px', overflowY: 'scroll' }}>
             {member && (member.id === id || memberCache[id]) ? <MemberInfo data={member} /> : <Loading height={500} />}
         </Container>
     )

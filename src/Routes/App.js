@@ -11,9 +11,9 @@ import * as jose from 'jose';
 
 function App() {
 
-  console.log("*****");
-  console.log("APP IS RENDERING");
-  console.log("******");
+  // console.log("*****");
+  // console.log("APP IS RENDERING");
+  // console.log("******");
 
   // User State stores the user object if logged in
   // User Context shares that object globally with all the components

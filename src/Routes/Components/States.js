@@ -6,6 +6,7 @@ import Loading from './Loading';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import StateCard from './StateCard';
+import './States.css';
 
 function States({ setState }) {
 
@@ -26,8 +27,8 @@ function States({ setState }) {
 
     if (states) {
         return (
-            <Container id="StateCardContainer" style={{ height: '580px' }}>
-                <Row style={{ marginTop: '25px' }}>
+            <Container id="StateCardContainer">
+                <Row xs={1} md={3} lg={4} xl={6} className="justify-content-center">
                     {states ? states.map(state => <StateCard key={uuid()} handleClick={handleClick} state={state} />) : <Loading />}
                 </Row>
             </Container>

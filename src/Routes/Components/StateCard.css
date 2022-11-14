@@ -1,0 +1,26 @@
+.StateCard .card {
+    border: 1px solid black;
+}
+
+.StateCard .card-title {
+    font-size: 25px;
+}
+
+/* md css */
+@media (min-width: 768px) {
+    .StateCard .card-title {
+        font-size: 21px;
+    }
+}
+
+/* xl css */
+
+@media (min-width: 1200px) {
+    .StateCard .card-title {
+        font-size: 18px;
+    }
+
+    .StateCard .card-subtitle {
+        font-size: 12px;
+    }
+}

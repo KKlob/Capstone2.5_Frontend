@@ -1,10 +1,13 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Spinner from '../../Images/spinner.gif';
 
 function Loading() {
     return (
-        <div className="Loading" style={{ height: "500px" }}>
-            <p>Loading Data...</p>
-        </div>
+        <Card>
+            <Card.Img src={Spinner} alt="Loading spinner" />
+            <Card.ImgOverlay />
+        </Card>
     )
 }
 
