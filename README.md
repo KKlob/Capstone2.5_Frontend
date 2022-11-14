@@ -15,8 +15,6 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
     - keep user page and show errors
     - Error handling needed
 - Style all aspects of app - Needs to focus on mobile presentation Upwards
-  - NavBar
-  - Loading Component
   - Add light/dark themes
 - Add incrememt to congress#
   - every odd-year on Jan 3. incrememt to next congress
