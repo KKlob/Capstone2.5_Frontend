@@ -28,10 +28,18 @@
 @media (min-width: 540px) {}
 
 /* md css */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    #MemberDisplay {
+        height: 525px;
+    }
+}
 
 /* lg css */
 @media (min-width: 992px) {}
 
 /* xl css */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    #MemberDisplay {
+        height: 550px;
+    }
+}

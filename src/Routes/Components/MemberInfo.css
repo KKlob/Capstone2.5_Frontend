@@ -50,6 +50,8 @@ a.card-link {
     margin-bottom: 5px;
 }
 
+
+
 /* sm css */
 @media (min-width: 540px) {
     .memberImg .card {
