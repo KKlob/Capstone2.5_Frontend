@@ -6,8 +6,8 @@ import './StateCard.css';
 function StateCard({ state, handleClick }) {
 
     return (
-        <Col xs={12} md={4} lg={3} xl={2} className="StateCard" style={{ marginTop: '10px' }}>
-            <Card style={{ cursor: 'pointer' }}>
+        <Col xs={12} md={4} lg={3} xl={2} className="StateCard">
+            <Card>
                 <Card.Body className="text-center">
                     <Card.Title>{state.name}</Card.Title>
                     <Card.Subtitle>| D: {state.partys.D} | R: {state.partys.R} | I: {state.partys.ID} |</Card.Subtitle>

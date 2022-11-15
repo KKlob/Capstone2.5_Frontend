@@ -1,0 +1,38 @@
+/* xs css */
+#MemberDisplay::-webkit-scrollbar {
+    width: 10px;
+}
+
+#MemberDisplay::-webkit-scrollbar-track {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#MemberDisplay::-webkit-scrollbar-thumb {
+    background: #C0C0C0;
+    border-radius: 10px;
+}
+
+#MemberDisplay {
+    height: 480px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+/* sm css */
+@media (min-width: 540px) {}
+
+/* md css */
+@media (min-width: 768px) {}
+
+/* lg css */
+@media (min-width: 992px) {}
+
+/* xl css */
+@media (min-width: 1200px) {}

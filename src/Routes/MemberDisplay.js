@@ -5,6 +5,7 @@ import API_Routes from '../Utilities/apiRoutes';
 import MemberInfo from './Components/MemberInfo';
 import Loading from './Components/Loading';
 import Container from 'react-bootstrap/Container';
+import './MemberDisplay.css';
 
 function MemberDisplay() {
 
@@ -31,7 +32,7 @@ function MemberDisplay() {
     }, [id, memberCache])
 
     return (
-        <Container id="MemberDisplay" style={{ height: '475px', marginTop: '10px', border: '1px solid black', borderRadius: '15px', padding: '10px 5px 5px 5px', overflowY: 'scroll' }}>
+        <Container id="MemberDisplay">
             {member && (member.id === id || memberCache[id]) ? <MemberInfo data={member} /> : <Loading height={500} />}
         </Container>
     )
