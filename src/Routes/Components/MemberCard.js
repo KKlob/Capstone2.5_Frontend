@@ -11,14 +11,14 @@ function MemberCard({ member, handleClick, colSize }) {
 
     if (member.party === "D") {
         partyString = "Democrat";
-        partyColor = "LightBlue";
+        partyColor = "#71a9c9";
     } else if (member.party === "R") {
         partyString = "Republican";
-        partyColor = "LightCoral";
+        partyColor = "#ed7d79";
     }
     else if (member.party === "ID") {
         partyString = "Independent";
-        partyColor = "LightGreen";
+        partyColor = "#83c98a";
     }
 
     return (

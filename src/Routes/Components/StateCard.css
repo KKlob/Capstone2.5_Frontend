@@ -1,5 +1,7 @@
 .StateCard .card {
     border: 1px solid black;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 .StateCard .card-title {

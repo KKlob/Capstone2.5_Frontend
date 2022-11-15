@@ -1,6 +1,7 @@
 /* xs css */
 #MemberInfoContainer .row {
     justify-content: center;
+    padding-bottom: 5px;
 }
 
 .memberImg .card {
