@@ -1,4 +1,8 @@
 /* xs css */
+#Homepage {
+    overflow-x: scroll;
+    height: 92vh;
+}
 
 /* sm css */
 @media (min-width: 540px) {}

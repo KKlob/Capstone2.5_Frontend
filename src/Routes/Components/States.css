@@ -17,7 +17,7 @@
 
 #StateCardContainer {
     height: 590px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 /* sm css */

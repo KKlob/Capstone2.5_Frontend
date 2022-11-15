@@ -15,7 +15,7 @@
 }
 
 #StateMemberContainer {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 525px;
 }
 

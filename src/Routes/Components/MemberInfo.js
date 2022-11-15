@@ -155,10 +155,10 @@ function MemberInfo({ data }) {
                                 </Card>
                             </Col>
                         </Row>
-                        <Row style={{ marginTop: '20px' }}>
+                        <Row>
                             <Col xs={12} className="d-grid">
                                 {token ?
-                                    (checkIfSub(data) ? <Button onClick={handleRemove} size="lg">Remove Sub</Button> : <Button onClick={handleAdd} size="lg">Add Sub</Button>) : null}
+                                    (checkIfSub(data) ? <Button onClick={handleRemove} size="lg" variant="danger">Remove Sub</Button> : <Button onClick={handleAdd} size="lg" variant="success">Add Sub</Button>) : null}
                             </Col>
                         </Row>
                     </Container>
