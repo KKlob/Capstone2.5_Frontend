@@ -1,7 +1,26 @@
 /* xs css */
+#StateMemberContainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+#StateMemberContainer::-webkit-scrollbar-track {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+#StateMemberContainer::-webkit-scrollbar-thumb {
+    background: #C0C0C0;
+    border-radius: 10px;
+}
+
 #StateMemberContainer {
     overflow-y: scroll;
     height: 525px;
+}
+
+#house_heading {
+    margin-top: 25px;
 }
 
 .chamber-heading {

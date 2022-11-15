@@ -48,7 +48,7 @@ function StateMembers({ state }) {
                 }
             </Row> : null}
             {houseMembers.length > 0 ? <Row className="justify-content-center">
-                <Col xs={12} className="chamber-heading text-center">
+                <Col xs={12} id="house_heading" className="chamber-heading text-center">
                     <h3>House Representatives</h3>
                 </Col>
                 {houseMembers.map(member => <MemberCard key={uuid()} member={member} handleClick={handleSelectMember} colSize={6} />)}
