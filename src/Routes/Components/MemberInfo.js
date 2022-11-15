@@ -158,7 +158,7 @@ function MemberInfo({ data }) {
                         <Row>
                             <Col xs={12} className="d-grid">
                                 {token ?
-                                    (checkIfSub(data) ? <Button onClick={handleRemove} size="lg" variant="danger">Remove Sub</Button> : <Button onClick={handleAdd} size="lg" variant="success">Add Sub</Button>) : null}
+                                    (checkIfSub(data) ? <Button onClick={handleRemove} size="lg" variant="danger">Remove Sub</Button> : <Button onClick={handleAdd} size="sm" variant="success">Add Sub</Button>) : null}
                             </Col>
                         </Row>
                     </Container>
