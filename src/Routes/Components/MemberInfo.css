@@ -1,0 +1,121 @@
+/* xs css */
+#MemberInfoContainer .row {
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.memberImg .card {
+    border-radius: 15px;
+}
+
+.memberImg.card .card-img-overlay {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.member-info-col .row {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.member-info-col {
+    margin-bottom: 10px;
+}
+
+.member-info-col .card-title {
+    font-size: 15px;
+}
+
+.member-info-col .card-subtitle {
+    font-size: 11px;
+}
+
+.member-info-col .card-text {
+    font-size: 13px;
+}
+
+a.card-link {
+    font-size: 13px;
+    word-wrap: normal;
+}
+
+.member-socials-card {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.member-data-row .card {
+    margin-bottom: 5px;
+}
+
+
+
+/* sm css */
+@media (min-width: 540px) {
+    .memberImg .card {
+        margin-top: 25px;
+    }
+}
+
+/* md css - breakpoint */
+@media (min-width: 768px) {}
+
+/* lg css - breakpoint*/
+@media (min-width: 992px) {
+    .memberImg .card {
+        margin-top: 40px;
+    }
+
+    .member-info-col .card-title {
+        font-size: 16px;
+    }
+
+    .member-info-col .card-subtitle {
+        font-size: 14px;
+    }
+
+    .member-info-col .card-text {
+        font-size: 15px;
+    }
+
+    a.card-link {
+        font-size: 15px;
+    }
+}
+
+/* xl css - breakpoint*/
+@media (min-width: 1200px) {
+    .member-socials-card {
+        margin-bottom: 5px;
+    }
+
+    .member-data-row .card {
+        margin-bottom: 3px;
+    }
+
+    .member-info-col .row {
+        margin-top: 0px;
+    }
+
+    .member-info-col {
+        margin-bottom: 0px;
+    }
+
+    .memberImg .card {
+        margin-top: 10px;
+    }
+
+    .member-info-col .card-title {
+        font-size: 18px;
+    }
+
+    .member-info-col .card-subtitle {
+        font-size: 16px;
+    }
+
+    .member-info-col .card-text {
+        font-size: 17px;
+    }
+}

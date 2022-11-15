@@ -1,0 +1,17 @@
+/* xs css */
+#Homepage {
+    overflow-x: scroll;
+    height: 92vh;
+}
+
+/* sm css */
+@media (min-width: 540px) {}
+
+/* md css */
+@media (min-width: 768px) {}
+
+/* lg css */
+@media (min-width: 992px) {}
+
+/* xl css */
+@media (min-width: 1200px) {}

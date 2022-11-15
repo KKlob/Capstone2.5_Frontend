@@ -1,4 +1,7 @@
+const url = process.env.REACT_APP_API_URL || "http://localhost:3001/api";
+
 const API_Routes = {
+    "baseURL": url,
     "congress": {
         "states": "/congress/states",
         "members": "/congress/members",
@@ -6,7 +9,7 @@ const API_Routes = {
     },
     "user": {
         "login": "/user/login",
-        "singup": "/user/signup",
+        "signup": "/user/signup",
         "delete": "/user/delete",
         "getSubs": "/user/subs",
         "addSub": "/user/subs/add",

@@ -1,0 +1,22 @@
+#CongressDisplay {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-bottom: 10px;
+}
+
+#rts-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* md sizing */
+@media (min-width: 768px) {}
+
+/* lg sizing */
+@media (min-width: 992px) {}
+
+/* xlsizing */
+@media (min-width: 1200px) {}

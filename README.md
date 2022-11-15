@@ -1,36 +1,45 @@
 # Capstone2.5 - Frontend
-Political Informant Application - React Front-End - Mobile-First UI Structure
+Who's That Congressperson? - React Front-End - Mobile-First UI Structure
 
 ### Use-case and audiance
 Responsive, intuitive web app built primarily for use on a smartphone or other hand-held device. Single-Page-Application allowing easy access to relevant Congressional Member information. Simplifying the way we understand how our Politicians represent us. Capstone includes congressional member lookup for most recent congress + user login to store subscribed members for quick lookup. Anyone wanting to have a quick informational lookup of US Congress Members would enjoy using this app.
 
 ## ToDo:
-- Write out Routes for app
-- Setup ENV + API requests
-  - API Routes created
-  - ENV variable for baseURL needed on Netlify
-- Flesh out components
-- Remove "Home" Button from NavBar while on homepage.
-  - On SubsPage, Login/Logout, Signup should appear and link to
-    - last member url
-    - homepage if no member url
 - Login/Logout/Signup
   - On success
-    - redirect to *home
+    - Flash success message to user
   - On failure
     - keep user page and show errors
-- Fix undefined error for years served
-- Add in routes for login/logout/signup
-- Add in route for subs + add/remove sub within MemberInfo
+    - Error handling needed
+- Style all aspects of app - Needs to focus on mobile presentation Upwards
+  - Work on adding general background styling for:
+    - Homepage
+    - States
+    - MemberInfo
+  - Work on adding transitions:
+    - MemberInfo showing
+    - Homepage loading
+    - StateCards Loading
+    - StateMembers Loading
+    - Signup/login pages loading
+    - Subs page loading
+  - Add light/dark themes
+- Add incrememt to congress#
+  - every odd-year on Jan 3. incrememt to next congress
+- comment code ********
+- write tests
 
 ## Technical Overview
-Front-end of Full-Stack Application using React to create a 
+Front-end Single-Page Application that can show congressional member information while also allowing a user to signup/login to subscribe to members for easy lookup.
 
 ### Tech Stack
 - React
+- React Router
 - React-Bootstrap
+- Formik - Form handler
+  - Yup - Form Validation Schema
 
-Deployed via Netlify: [Political Informant App](https://tranquil-quokka-0aa89d.netlify.app/)
+Deployed via Netlify: [Who's That Congressperson?](https://wtcp.netlify.app)
 
 ## General Flow
 Front-End will have a nav bar at top + 2(3) distinct windows
@@ -77,13 +86,19 @@ clicking on the Signup Link / Login Link will route to the /signup or /login rou
 - "/"
   - NavBar
   - CongressDisplay
-- "/:memberID"
+- "/member/:memberID"
   - NavBar
   - MemberDisplay - Rendered via Outlet
   - CongressDisplay
 - "/subs"
   - NavBar
   - SubbedMemberDisplay
+- "/login"
+  - NavBar
+  - LoginForm
+- "/signup"
+  - NavBar
+  - signupForm
 
 ## Stretch Goals
 ### Search Bar

@@ -1,0 +1,30 @@
+/* xs css */
+#StateCardContainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+#StateCardContainer::-webkit-scrollbar-track {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#StateCardContainer::-webkit-scrollbar-thumb {
+    background: #C0C0C0;
+    border-radius: 10px;
+}
+
+#StateCardContainer {
+    height: 590px;
+    overflow-y: auto;
+}
+
+/* sm css */
+@media (min-width: 540px) {}
+
+/* md css */
+@media (min-width: 768px) {}
+
+/* lg css */
+@media (min-width: 992px) {}
