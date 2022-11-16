@@ -10,6 +10,8 @@ import './States.css';
 
 function States({ setState }) {
 
+    // Component holding all StateCards.
+
     const [states, setStates] = useState(null);
 
     useEffect(() => {
@@ -20,6 +22,7 @@ function States({ setState }) {
         fetchStates();
     }, [])
 
+    // handles user selecting a StateCard - sets the parents state to the selected StateCard's code. 
     function handleClick(evt) {
         const code = evt.target.dataset.code;
         setState(code);

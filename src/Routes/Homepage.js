@@ -6,6 +6,8 @@ import './Homepage.css';
 
 function Homepage() {
 
+    // Genearl Homepage Component. Holds the MemberDisplay and CongressDisplay
+
     const path = useLocation().pathname;
 
     return (
