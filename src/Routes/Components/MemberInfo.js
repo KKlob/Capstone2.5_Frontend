@@ -12,12 +12,16 @@ import './MemberInfo.css';
 
 function MemberInfo({ data }) {
 
+    // Builds the MemberInfo Component filling MemberDisplay when a member is selected by a user. Also allows a logged in user to Add/Remove subs
+
     const path = useLocation().pathname;
 
+    // Pull in the user subs and token. Token is necessary for all API calls.
     const { subs, setSubs } = useContext(SubsContext);
     const token = useContext(UserContext);
 
     function addSub(memberId, memberObj) {
+        // handles adding a sub for a logged in user.
         async function addSubToDB() {
             const url = API_Routes.baseURL + API_Routes.user.addSub;
             const resp = await axios({
@@ -36,6 +40,7 @@ function MemberInfo({ data }) {
     }
 
     function removeSub(memberId, memberObj) {
+        // handles removing a sub for a logged in user
         async function removeSubFromDB() {
             const url = API_Routes.baseURL + API_Routes.user.removeSub;
             const resp = await axios({
@@ -56,6 +61,7 @@ function MemberInfo({ data }) {
     }
 
     function checkIfSub(member) {
+        // handles checking if a member is one of the logged in user's subs.
         if (subs.indexOf(member) === -1) {
             return false;
         } else {
@@ -63,12 +69,14 @@ function MemberInfo({ data }) {
         }
     }
 
+    // Helper function to build party affiliation in MemberInfo
     const party = () => {
         if (data.party === "R") return "Republican";
         if (data.party === "D") return "Democrat";
         if (data.party === "ID") return "Independent";
     }
 
+    // Helper function to build service sentance for MemberInfo
     const chamber = () => {
         if (data.chamber === "Senate") return `Senator for ${data.years_served} years`;
         if (data.chamber === "House") return `House Representative for ${data.years_served} years`;
@@ -83,6 +91,7 @@ function MemberInfo({ data }) {
     }
 
     return (
+        // Only add the stylilng if we are on the /subs url. Allows for MemberInfo to be used in more than just MemberDisplay
         <Container id="MemberInfoContainer" style={path === "/subs" ? { border: '1px solid black', borderRadius: '15px', marginTop: '10px', marginBottom: '10px' } : null}>
             <Row xs={1} md={2}>
                 <Col className="memberImg" xs={7} md={6} lg={4}>
@@ -158,7 +167,7 @@ function MemberInfo({ data }) {
                         <Row>
                             <Col xs={12} className="d-grid">
                                 {token ?
-                                    (checkIfSub(data) ? <Button onClick={handleRemove} size="lg" variant="danger">Remove Sub</Button> : <Button onClick={handleAdd} size="sm" variant="success">Add Sub</Button>) : null}
+                                    (checkIfSub(data) ? <Button onClick={handleRemove} size="sm" variant="danger">Remove Sub</Button> : <Button onClick={handleAdd} size="sm" variant="success">Add Sub</Button>) : null}
                             </Col>
                         </Row>
                     </Container>

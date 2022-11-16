@@ -15,14 +15,19 @@ function App() {
   // console.log("APP IS RENDERING");
   // console.log("******");
 
-  // User State stores the user object if logged in
+  // token holds JWT token of logged in user
   // User Context shares that object globally with all the components
 
   const [token, setToken] = useState(null);
+
+  // lastMember saves the last URL visited by the user before going to the login/signup page. Home link will use this url
   const [lastMember, setLastMember] = useState("/");
+
+  // subs saves the logged in users subs locally. If a user logs in, their subs will be saved here
   const [subs, setSubs] = useState([]);
 
   useEffect(() => {
+    // Any time a user logs in, the token will be decoded and the subs added to the subs state
     if (token) {
       async function decodeToken() {
         const user = await jose.decodeJwt(token);

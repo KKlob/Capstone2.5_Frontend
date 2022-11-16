@@ -10,20 +10,20 @@ import './SubbedMembers.css';
 
 function SubbedMembers() {
 
-    const { subs } = useContext(SubsContext);
+    // Component holding all MemberInfo components associated with a logged in user's subs.
 
-    // console.log(subs);
+    const { subs } = useContext(SubsContext);
 
     return (
         <Container id="SubbedMembersContainer">
             {subs.length ?
                 <Row xs={1}>
-                    {subs ? subs.map(member => <Col><MemberInfo data={member} key={uuid()} /></Col>) : <Col><Loading /></Col>}
+                    {subs ? subs.map(member => <Col key={uuid()}><MemberInfo data={member} /></Col>) : <Col><Loading /></Col>}
                 </Row>
-                :
+                : // If there are subs in the subsContext - display them. Otherwise show the below message to the user
                 <Row xs={1} className="justify-content-center">
                     <Col className="text-center">
-                        You have no subbed members. Go to the homepage, select a State --> select a State Congressional Member to see the option to add a sub.
+                        You have no subbed members. Go to the homepage, select a State {"-->"} select a State Congressional Member to see the option to add a sub.
                     </Col>
                 </Row>
             }
