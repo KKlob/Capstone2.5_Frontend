@@ -4,7 +4,9 @@ import Card from 'react-bootstrap/Card';
 import './StateCard.css';
 
 function StateCard({ state, handleClick }) {
+    // Componet building the StateCard. passed all state data. Does not perform API calls
 
+    // handle base styling for the card based on state info.
     let style;
     if (state.partys.D > state.partys.R && state.partys.D > state.partys.ID) style = { backgroundColor: '#71a9c9' };
     if (state.partys.R > state.partys.D && state.partys.R > state.partys.ID) style = { backgroundColor: '#ed7d79' };

@@ -5,6 +5,7 @@ import './MemberCard.css';
 
 
 function MemberCard({ member, handleClick, colSize }) {
+    // Componet building a Member Card. MemberCard is passed all member data. Does not call API directly.
 
     let partyString;
     let partyColor;

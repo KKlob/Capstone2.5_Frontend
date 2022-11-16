@@ -6,6 +6,8 @@ import * as jose from 'jose';
 
 function SubsDisplay() {
 
+    // Componet housing all the members a user has subbed to
+
     const token = useContext(UserContext);
 
     let user;

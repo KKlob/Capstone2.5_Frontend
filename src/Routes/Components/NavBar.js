@@ -8,6 +8,8 @@ import './NavBar.css';
 
 function NavBar({ setToken, setLastMember, lastMember }) {
 
+    // Navbar for the application. Renders on all routes.
+
     const path = useLocation().pathname;
 
     const navigate = useNavigate();
@@ -72,6 +74,7 @@ function NavBar({ setToken, setLastMember, lastMember }) {
                                 }}
                             </UserContext.Consumer> : null}
 
+                        {/* Subs Link Rules - renders if user logged in and path is not /subs */}
                         <UserContext.Consumer>
                             {token => {
                                 if (token && path !== "/subs") {
@@ -82,6 +85,8 @@ function NavBar({ setToken, setLastMember, lastMember }) {
 
                             }}
                         </UserContext.Consumer>
+
+                        {/* Logout link rules - renders if user logged in */}
                         <UserContext.Consumer>
                             {token => {
                                 if (token) {

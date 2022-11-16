@@ -15,6 +15,7 @@ function CongressDisplay() {
 
     return (
         <Container id="CongressDisplay">
+            {/* If state !== null we want to show the "Return to States" button */}
             {state ? <Row className="justify-content-center">
                 <Col id="rts-button" xs={8} className="text-center d-grid">
                     <Button onClick={() => setState(null)} size="lg">Return to States</Button>

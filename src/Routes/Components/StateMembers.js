@@ -12,8 +12,11 @@ import './StateMembers.css';
 
 function StateMembers({ state }) {
 
+    // Componet holding all MemberCards relating to the state passed in.
+
     const navigate = useNavigate();
 
+    // hold all member objects relating to state
     const [members, setMembers] = useState([]);
 
     const path = useLocation().pathname;
@@ -28,6 +31,8 @@ function StateMembers({ state }) {
         fetchStateMembers();
     }, [state])
 
+
+    // handles user selecting a MemberCard. Navigates to the associated member url
     function handleSelectMember(evt) {
         const memberId = evt.target.dataset.id;
         if (!path.includes(memberId)) {
@@ -35,6 +40,7 @@ function StateMembers({ state }) {
         }
     }
 
+    // Separates Senate and House Members
     const senateMembers = members.filter(member => member.chamber === "Senate" && member.id !== "H001075");
     const houseMembers = members.filter(member => member.chamber === "House");
 

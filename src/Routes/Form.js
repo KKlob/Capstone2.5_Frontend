@@ -10,6 +10,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+// Universal Form file for Login / Signup pages. Both forms utilize the same logic and have very slight differences in user input.
+// Depends on path which form will be shown. onSubmit logic is the same
+// Utilizes Yup to validate form inputs before firing off API call to login/signup user
+
+// ******* STILL NEED TO HANDLE ERRORS FROM API AND DISPLAY TO USER *************
+
 function Form({ setToken, lastMember }) {
 
     const navigate = useNavigate();
@@ -18,7 +24,7 @@ function Form({ setToken, lastMember }) {
 
     // console.log(lastMember);
 
-    // Login Form
+    // Login Form              ****************************************************************
     if (path.includes("login")) {
 
         return (
@@ -91,7 +97,7 @@ function Form({ setToken, lastMember }) {
                 </Formik>
             </div>
         )
-        // SignUp Form
+        // SignUp Form         ********************************************************************************
     } else if (path.includes("signup")) {
 
         return (
