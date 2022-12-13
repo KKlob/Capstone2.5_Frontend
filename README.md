@@ -26,7 +26,7 @@ Responsive, intuitive web app built primarily for use on a smartphone or other h
 <li>Plan out front-end Route / Component structure</li>
    <ul>
     <li>Main App Routes necessary</li>
-    <li>Compoent State + Hierarchy</li>
+    <li>Component State + Hierarchy</li>
     <li>Any global Redux / Context data necessary</li>
     <li>Other React libraries to utilize</li>
     <li>Hosting and Access</li>
